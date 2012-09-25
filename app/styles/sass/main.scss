@@ -1,0 +1,24 @@
+body {
+  padding-top: 60px;
+  @media (max-width: 979px){
+    padding-top: 0px;
+  }
+}
+
+#searchPanel {
+  > form {
+    margin: 0px;
+  }
+
+  &.hero-unit{
+    padding: 40px 60px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
+
+#movieResult .caption {
+  margin-left : 220px;
+}

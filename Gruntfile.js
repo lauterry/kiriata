@@ -28,9 +28,9 @@ module.exports = function( grunt ) {
       dist: {
         // http://compass-style.org/help/tutorials/configuration-reference/#configuration-properties
         options: {
-          css_dir: 'temp/styles',
-          sass_dir: 'app/styles',
-          images_dir: 'app/images',
+          css_dir: 'app/styles',
+          sass_dir: 'app/styles/sass',
+          images_dir: 'app/img',
           javascripts_dir: 'temp/scripts',
           force: true
         }
@@ -167,7 +167,7 @@ module.exports = function( grunt ) {
   // Alias the `test` task to run `testacular` instead
   grunt.registerTask('test', 'run the testacular test driver', function () {
     var done = this.async();
-    require('child_process').exec('testacular testacular.conf.js --single-run', function (err, stdout) {
+    require('child_process').exec('testacular start --single-run', function (err, stdout) {
       grunt.log.write(stdout);
       done(err);
     });

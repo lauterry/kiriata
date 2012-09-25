@@ -1,1 +1,28 @@
-/* Will be compiled down to a single stylesheet with your sass files */
+/* line 1, sass/main.scss */
+body {
+  padding-top: 60px;
+}
+@media (max-width: 979px) {
+  /* line 1, sass/main.scss */
+  body {
+    padding-top: 0px;
+  }
+}
+
+/* line 9, sass/main.scss */
+#searchPanel > form {
+  margin: 0px;
+}
+/* line 13, sass/main.scss */
+#searchPanel.hero-unit {
+  padding: 40px 60px;
+}
+/* line 17, sass/main.scss */
+#searchPanel p {
+  font-size: 14px;
+}
+
+/* line 22, sass/main.scss */
+#movieResult .caption {
+  margin-left: 220px;
+}

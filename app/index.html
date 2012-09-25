@@ -6,9 +6,11 @@
     <head>
         <meta charset="utf-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-        <title>Kiriata</title>
+        <title></title>
         <meta name="description" content=""/>
         <meta name="viewport" content="width=device-width"/>
+        <link rel="stylesheet" href="styles/bootstrap.css">
+        <link rel="stylesheet" href="styles/bootstrap-responsive.css">
         <link rel="stylesheet" href="styles/main.css"/>
 
     </head>
@@ -18,14 +20,42 @@
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
         <![endif]-->
 
+        <div class="navbar navbar-fixed-top navbar-inverse">
+            <div class="navbar-inner">
+                <div class="container">
+
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+
+                    <!-- Be sure to leave the brand out there if you want it shown -->
+                    <a class="brand" href="#">Kiriata</a>
+
+                    <!-- Everything you want hidden at 940px or less, place within here -->
+                    <div class="nav-collapse">
+                        <ul class="nav">
+                            <li class="active">
+                                <a href="#/search">Recherche de films</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
         <!-- Add your site or application content here -->
         <div class="container" ng-view></div>
 
-        <script src="scripts/vendor/angular.js"></script>
+        <script src="scripts/vendor/AngularJS/angular.js"></script>
+        <script type="text/javascript" src="scripts/vendor/AngularJS/angular-resource.js"></script>
 
         <!-- build:js scripts/scripts.js -->
         <script src="scripts/kiriata.js"></script>
         <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/search.js"></script>
         <!-- endbuild -->
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
