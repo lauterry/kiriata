@@ -8,9 +8,13 @@ var kiriataApp = angular.module('kiriataApp', ['ngResource'])
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/search', {
-        templateUrl: 'views/search.html',
-        controller: 'SearchCtrl'
+      .when('/movieList', {
+        templateUrl: 'views/movieList.html',
+        controller: 'MovieListCtrl'
+      })
+      .when('/movieDetail/:code', {
+        templateUrl: 'views/movieDetail.html',
+        controller: 'MovieDetailCtrl'
       })
       .otherwise({
         redirectTo: '/'

@@ -46,8 +46,19 @@
             </div>
         </div>
 
-        <!-- Add your site or application content here -->
-        <div class="container" ng-view></div>
+        <div ng-controller="SearchCtrl">
+            <div id="searchPanel" class="hero-unit" >
+                <form class="form-search" ng-submit="search()">
+                    <div class="input-append">
+                        <input type="text" class="input-xxlarge search-query" ng-model="searchInput">
+                        <input type="submit" class="btn btn-primary" value="Chercher"/>
+                        <p>Ex : Avatar, films d'horreur, Peter Jackson ...</p>
+                    </div>
+                </form>
+            </div>
+            <!-- Add your site or application content here -->
+            <div class="container" ng-view></div>
+        </div>
 
         <script src="scripts/vendor/AngularJS/angular.js"></script>
         <script type="text/javascript" src="scripts/vendor/AngularJS/angular-resource.js"></script>
@@ -56,6 +67,8 @@
         <script src="scripts/kiriata.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/search.js"></script>
+        <script src="scripts/controllers/movieList.js"></script>
+        <script src="scripts/controllers/movieDetail.js"></script>
         <!-- endbuild -->
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

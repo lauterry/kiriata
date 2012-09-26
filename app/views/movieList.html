@@ -1,17 +1,5 @@
 <div class="row">
     <div class="span12">
-        <div id="searchPanel" class="hero-unit">
-            <form class="form-search" ng-submit="search()">
-                <div class="input-append">
-                    <input type="text" class="input-xxlarge search-query" ng-model="searchInput">
-                    <input type="button" class="btn btn-primary" value="Chercher"/>
-                    <p>Ex : Avatar, films d'horreur, Peter Jackson ...</p>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <div class="span12">
         <ul class="thumbnails">
             <li ng-repeat="movie in movies.feed.movie" class="span12">
                 <div id="movieResult">
@@ -28,8 +16,8 @@
                         <p><b>Directors : </b>{{movie.castingShort.directors}}</p>
                         <p><b>Actors : </b>{{movie.castingShort.actors}}</p>
                         <p>
-                            <a ng-href="#/movies/{{movie.code}}" class="btn btn-info">More details</a>
-                            <a id="addButton" ng-href="#/movies/{{search_query}}/add/{{movie.code}}" class="btn btn-success">Ajouter</a>
+                            <a ng-href="#/movieDetail/{{movie.code}}" class="btn btn-info">More details</a>
+                            <a id="addButton" ng-href="" class="btn btn-success">Ajouter</a>
                         </p>
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 'use strict';
 
-kiriataApp.controller('SearchCtrl', function($scope, $resource) {
+kiriataApp.controller('SearchCtrl', function($scope, $resource, $location) {
     $scope.search = function(){
 
         $scope.allocine = $resource("http://api.allocine.fr/rest/v3/:action",
@@ -9,6 +9,8 @@ kiriataApp.controller('SearchCtrl', function($scope, $resource) {
         );
 
         $scope.movies = $scope.allocine.get({q:$scope.searchInput});
+
+        $location.path('/movieList');
 
     }
 });

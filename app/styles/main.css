@@ -1,6 +1,6 @@
 /* line 1, sass/main.scss */
 body {
-  padding-top: 60px;
+  padding-top: 40px;
 }
 @media (max-width: 979px) {
   /* line 1, sass/main.scss */
@@ -15,14 +15,20 @@ body {
 }
 /* line 13, sass/main.scss */
 #searchPanel.hero-unit {
-  padding: 40px 60px;
+  padding: 20px 60px;
 }
 /* line 17, sass/main.scss */
 #searchPanel p {
   font-size: 14px;
+  margin-left: 15px;
 }
 
-/* line 22, sass/main.scss */
+/* line 23, sass/main.scss */
 #movieResult .caption {
   margin-left: 220px;
+}
+
+/* line 28, sass/main.scss */
+.controls label {
+  padding-top: 5px;
 }
