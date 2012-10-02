@@ -16,8 +16,8 @@
                         <p><b>Directors : </b>{{movie.castingShort.directors}}</p>
                         <p><b>Actors : </b>{{movie.castingShort.actors}}</p>
                         <p>
-                            <a ng-href="#/movieDetail/{{movie.code}}" class="btn btn-info">More details</a>
-                            <a id="addButton" ng-href="" class="btn btn-success">Ajouter</a>
+                            <a ng-href="#/movieDetail/{{movie.code}}" class="btn btn-info">Plus de détails</a>
+                            <button id="addButton" ng-click="addMovie(movie.code)" class="btn btn-success">Ajouter</button>
                         </p>
                     </div>
                 </div>

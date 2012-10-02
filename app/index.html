@@ -9,12 +9,12 @@
         <title></title>
         <meta name="description" content=""/>
         <meta name="viewport" content="width=device-width"/>
-        <link rel="stylesheet" href="styles/bootstrap.css">
-        <link rel="stylesheet" href="styles/bootstrap-responsive.css">
+        <link rel="stylesheet" href="styles/bootstrap.min.css">
+        <link rel="stylesheet" href="styles/bootstrap-responsive.min.css">
         <link rel="stylesheet" href="styles/main.css"/>
 
     </head>
-    <body ng-app="kiriataApp">
+    <body ng-app="mockedKiriataApp">
 
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
@@ -52,16 +52,21 @@
                     <div class="input-append">
                         <input type="text" class="input-xxlarge search-query" ng-model="searchInput">
                         <input type="submit" class="btn btn-primary" value="Chercher"/>
-                        <p>Ex : Avatar, films d'horreur, Peter Jackson ...</p>
+
                     </div>
+                    <p>Ex : Avatar, films d'horreur, Peter Jackson ...</p>
                 </form>
             </div>
             <!-- Add your site or application content here -->
             <div class="container" ng-view></div>
         </div>
 
+        <script src="scripts/vendor/jquery/jquery.js"></script>
         <script src="scripts/vendor/AngularJS/angular.js"></script>
-        <script type="text/javascript" src="scripts/vendor/AngularJS/angular-resource.js"></script>
+        <script src="scripts/vendor/angular-modules/resource.js"></script>
+        <script src="scripts/vendor/angular-modules/angular-mocks.js"></script>
+        <script src="scripts/vendor/bootstrap/js/bootstrap-transition.js"></script>
+        <script src="scripts/vendor/bootstrap/js/bootstrap-button.js"></script>
 
         <!-- build:js scripts/scripts.js -->
         <script src="scripts/kiriata.js"></script>

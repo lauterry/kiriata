@@ -161,7 +161,7 @@ module.exports = function( grunt ) {
       optimize: 'none',
       baseUrl: './scripts',
       wrap: true
-    },
+    }
   });
 
   // Alias the `test` task to run `testacular` instead
