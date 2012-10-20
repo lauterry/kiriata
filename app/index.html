@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="styles/main.css"/>
 
     </head>
-    <body ng-app="mockedKiriataApp">
+    <body ng-app="kiriataApp">
 
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
@@ -39,6 +39,9 @@
                             <li class="active">
                                 <a href="#/search">Recherche de films</a>
                             </li>
+                            <li>
+                                <a href="#/library">Ma bibliothèque</a>
+                            </li>
                         </ul>
                     </div>
 
@@ -57,11 +60,11 @@
                     <p>Ex : Avatar, films d'horreur, Peter Jackson ...</p>
                 </form>
             </div>
-            <!-- Add your site or application content here -->
             <div class="container" ng-view></div>
         </div>
 
         <script src="scripts/vendor/jquery/jquery.js"></script>
+        <script src="scripts/vendor/underscore/underscore-min.js"></script>
         <script src="scripts/vendor/AngularJS/angular.js"></script>
         <script src="scripts/vendor/angular-modules/resource.js"></script>
         <script src="scripts/vendor/angular-modules/angular-mocks.js"></script>
@@ -74,6 +77,7 @@
         <script src="scripts/controllers/search.js"></script>
         <script src="scripts/controllers/movieList.js"></script>
         <script src="scripts/controllers/movieDetail.js"></script>
+        <script src="scripts/controllers/library.js"></script>
         <!-- endbuild -->
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

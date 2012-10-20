@@ -17,7 +17,11 @@
                         <p><b>Actors : </b>{{movie.castingShort.actors}}</p>
                         <p>
                             <a ng-href="#/movieDetail/{{movie.code}}" class="btn btn-info">Plus de détails</a>
-                            <button id="addButton" ng-click="addMovie(movie.code)" class="btn btn-success">Ajouter</button>
+                            <span ng-switch on="movie.owned">
+                                <button ng-switch-when="y" class="btn btn-success">Possédé</button>
+                                <button ng-switch-default ng-click="addMovie(movie)" class="btn btn-inverse">Ajouter</button>
+                                <!--<button ng-switch-default class="btn btn-warning">Je ne sais pas si tu l'as</button>-->
+                            </span>
                         </p>
                     </div>
                 </div>

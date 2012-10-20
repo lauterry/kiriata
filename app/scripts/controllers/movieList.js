@@ -1,14 +1,15 @@
 'use strict';
 
 kiriataApp.controller('MovieListCtrl', function($scope, $resource) {
-    $scope.addMovie = function(code){
-        $scope.allocine = $resource("http://localhost:8000/kiriata/:action",
-            {action:'movies'},
+
+    $scope.addMovie = function(movie){
+        $scope.allocine = $resource("http://localhost:port/kiriata/:action",
+            {action:'movies', port:':8000'},
             {create : { method : 'POST' }}
         );
 
-        $scope.allocine.create({code:code}, function(){
-            console.log("Movie saved : " + code);
+        $scope.allocine.create(movie, function(){
+            console.log("Movie saved : " + movie);
         });
     }
 });

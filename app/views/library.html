@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="span12">
+        <ul class="thumbnails">
+            <li ng-repeat="movie in movies" class="span2">
+                <div id="movieResult" class="thumbnail">
+
+                    <div ng-switch on="movie.poster.href" >
+                        <img ng-switch-when=undefined ng-src="img/no-photo.jpg" class="img-rounded"/>
+                        <img ng-switch-default ng-src="{{movie.poster.href}}" class="img-rounded"/>
+                    </div>
+
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
