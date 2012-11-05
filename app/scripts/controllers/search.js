@@ -1,6 +1,6 @@
 'use strict';
 
-kiriataApp.controller('SearchCtrl', function($scope, $resource, $location) {
+kiriataApp.controller('SearchCtrl', ['$scope', '$resource', '$location',  function($scope, $resource, $location) {
 
     $scope.search = function(){
 
@@ -15,4 +15,4 @@ kiriataApp.controller('SearchCtrl', function($scope, $resource, $location) {
 
     }
 
-});
+}]);

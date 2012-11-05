@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-        <title></title>
+        <title>Kiriata</title>
         <meta name="description" content=""/>
         <meta name="viewport" content="width=device-width"/>
         <link rel="stylesheet" href="styles/bootstrap.min.css">
@@ -20,56 +20,19 @@
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
         <![endif]-->
 
-        <div class="navbar navbar-fixed-top navbar-inverse">
-            <div class="navbar-inner">
-                <div class="container">
-
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </a>
-
-                    <!-- Be sure to leave the brand out there if you want it shown -->
-                    <a class="brand" href="#">Kiriata</a>
-
-                    <!-- Everything you want hidden at 940px or less, place within here -->
-                    <div class="nav-collapse">
-                        <ul class="nav">
-                            <li class="active">
-                                <a href="#/search">Recherche de films</a>
-                            </li>
-                            <li>
-                                <a href="#/library">Ma bibliothèque</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-        </div>
+        <header class="navbar navbar-fixed-top navbar-inverse" ng-include="'views/header.html'"></header>
 
         <div ng-controller="SearchCtrl">
-            <div id="searchPanel" class="hero-unit" >
-                <form class="form-search" ng-submit="search()">
-                    <div class="input-append">
-                        <input type="text" class="input-xxlarge search-query" ng-model="searchInput">
-                        <input type="submit" class="btn btn-primary" value="Chercher"/>
-
-                    </div>
-                    <p>Ex : Avatar, films d'horreur, Peter Jackson ...</p>
-                </form>
-            </div>
+            <div id="searchPanel" class="hero-unit" ng-include="'views/search.html'"/></div>
             <div class="container" ng-view></div>
         </div>
 
         <script src="scripts/vendor/jquery/jquery.js"></script>
-        <script src="scripts/vendor/underscore/underscore-min.js"></script>
+        <script src="scripts/vendor/bootstrap-js/bootstrap.js"></script>
+        <script src="scripts/vendor/underscore/underscore.js"></script>
         <script src="scripts/vendor/AngularJS/angular.js"></script>
         <script src="scripts/vendor/angular-modules/resource.js"></script>
         <script src="scripts/vendor/angular-modules/angular-mocks.js"></script>
-        <script src="scripts/vendor/bootstrap/js/bootstrap-transition.js"></script>
-        <script src="scripts/vendor/bootstrap/js/bootstrap-button.js"></script>
 
         <!-- build:js scripts/scripts.js -->
         <script src="scripts/kiriata.js"></script>

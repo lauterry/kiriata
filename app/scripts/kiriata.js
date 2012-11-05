@@ -1,13 +1,9 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-var kiriataApp = angular.module('kiriataApp', ['ngResource'])
-  .config(['$routeProvider', function($routeProvider) {
+var kiriataApp = angular.module('kiriataApp', ['ngResource']);
+kiriataApp.config(['$routeProvider', function($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
       .when('/library', {
         templateUrl: 'views/library.html',
         controller: 'LibraryCtrl'
@@ -20,8 +16,11 @@ var kiriataApp = angular.module('kiriataApp', ['ngResource'])
         templateUrl: 'views/movieDetail.html',
         controller: 'MovieDetailCtrl'
       })
+      .when('/404', {
+        templateUrl: '404.html'
+      })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/404'
       });
   }]);
 

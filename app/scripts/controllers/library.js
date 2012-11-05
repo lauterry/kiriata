@@ -1,6 +1,6 @@
 'use strict';
 
-kiriataApp.controller('LibraryCtrl', function($scope, $resource) {
+kiriataApp.controller('LibraryCtrl', ['$scope', '$resource', function($scope, $resource) {
 
     $scope.allocine = $resource("http://localhost:port/kiriata/:action",
         {action:'movies', q:'', 'port':':8000'}
@@ -10,4 +10,6 @@ kiriataApp.controller('LibraryCtrl', function($scope, $resource) {
         $scope.movies = movies;
     });
 
-});
+}]);
+
+

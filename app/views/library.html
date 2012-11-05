@@ -5,8 +5,16 @@
                 <div id="movieResult" class="thumbnail">
 
                     <div ng-switch on="movie.poster.href" >
-                        <img ng-switch-when=undefined ng-src="img/no-photo.jpg" class="img-rounded"/>
-                        <img ng-switch-default ng-src="{{movie.poster.href}}" class="img-rounded"/>
+                        <img ng-switch-when=undefined ng-src="img/no-photo.jpg" class="img-rounded" ng-click="goToDetail(movie.code)"/>
+                        <img ng-switch-default ng-src="{{movie.poster.href}}" class="img-rounded" ng-click="goToDetail(movie.code)"/>
+                    </div>
+
+
+                    <div class="caption">
+                        <h5>{{movie.originalTitle}}</h5>
+                        <p>
+                            <a ng-click="deleteMovie(movie.id)" class="btn btn-danger">Supprimé</a>
+                        </p>
                     </div>
 
                 </div>
