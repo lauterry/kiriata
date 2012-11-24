@@ -1,11 +1,7 @@
 'use strict';
 
-kiriataApp.controller('MovieDetailCtrl', ['$scope', '$resource', '$routeParams',  function($scope, $resource, $routeParams) {
-    $scope.allocine = $resource("http://api.allocine.fr/rest/v3/:action",
-        {action:'movie', code:'0', partner:"YW5kcm9pZC12M3M", profile:'small', format:'json', callback:'JSON_CALLBACK'},
-        {get:{method:'JSONP'}}
-    );
+kiriataApp.controller('MovieDetailCtrl', ['$scope', 'allocineService', '$routeParams',  function($scope, allocineService, $routeParams) {
 
-    $scope.movie = $scope.allocine.get({code:$routeParams.code});
+    $scope.movie = allocineService.movieDetail($routeParams.code);
 
 }]);

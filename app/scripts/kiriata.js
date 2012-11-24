@@ -27,7 +27,8 @@ kiriataApp.config(['$routeProvider', function($routeProvider) {
 
 // Mocked module to be able to develop without a server
 var mockedKiriataApp = angular.module('mockedKiriataApp', ['kiriataApp', 'ngMockE2E']);
-mockedKiriataApp.run(function($httpBackend) {
+
+mockedKiriataApp.run(function($httpBackend, localStorageService) {
     var ownedMovies = [  {
                         "id": 1,
                         "comment": "Super film. La 3D est géniale.",
@@ -71,6 +72,9 @@ mockedKiriataApp.run(function($httpBackend) {
                         "lastWatched": "2011-04-20"
                     }];
 
+
+    localStorageService.add('movies', angular.toJson(ownedMovies));
+
     // calls to return templates are not mocked
     $httpBackend.whenGET(/^views/).passThrough();
 
@@ -78,11 +82,15 @@ mockedKiriataApp.run(function($httpBackend) {
     $httpBackend.whenJSONP(/^http:\/\/api.allocine.fr/).passThrough();
 
     // returns the current list of owned movies
-    $httpBackend.whenGET(/^http:\/\/localhost\/kiriata\/movies/).respond(ownedMovies);
+    $httpBackend.whenGET(/^http:\/\/localhost:8000\/kiriata\/movies/).respond(localStorageService.get('movies'));
 
     // adds a new movie to the ownedMovies array
-    $httpBackend.whenPOST(/^http:\/\/localhost\/kiriata\/movies/).respond(function(method, url, data) {
-       ownedMovies.push(angular.fromJson(data));
+    $httpBackend.whenPOST(/^http:\/\/localhost:8000\/kiriata\/movies/).respond(function(method, url, data) {
+
+        var movies = angular.fromJson(localStorageService.get('movies'));
+        movies.push(angular.fromJson(data));
+
+        localStorageService.add('movies', angular.toJson(movies));
        return 200;
     });
 
