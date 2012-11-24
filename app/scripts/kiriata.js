@@ -24,6 +24,7 @@ kiriataApp.config(['$routeProvider', function($routeProvider) {
       });
   }]);
 
+
 // Mocked module to be able to develop without a server
 var mockedKiriataApp = angular.module('mockedKiriataApp', ['kiriataApp', 'ngMockE2E']);
 mockedKiriataApp.run(function($httpBackend) {
