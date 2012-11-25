@@ -10,16 +10,16 @@ kiriataApp.factory('kiriataService', ['$resource', function($resource) {
         {create : { method : 'POST' },
          remove : { method : 'DELETE'}});
 
-    var fetch = function () {
-        return kiriata.query({action:'movies'});
+    var fetch = function (options) {
+        return kiriata.query({action:'movies'}, options.success, options.error);
     };
 
-    var save = function(movie){
-        return kiriata.create({action:'movies'}, movie);
+    var save = function(movie, options){
+        return kiriata.create({action:'movies'}, movie, options.success, options.error);
     };
 
-    var remove = function(code){
-        return kiriata.delete({action:'movies'}, code);
+    var remove = function(code, options){
+        return kiriata.delete({action:'movies'}, code, options.success, options.error);
     }
 
     return {

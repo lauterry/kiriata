@@ -22,10 +22,10 @@
 
         <header class="navbar navbar-fixed-top navbar-inverse" ng-include="'views/header.html'"></header>
 
-        <div ng-controller="SearchCtrl">
-            <div id="searchPanel" class="hero-unit" ng-include="'views/search.html'"/></div>
-            <div class="container" ng-view></div>
-        </div>
+        <section ng-controller="SearchCtrl">
+            <header id="searchPanel" class="hero-unit" ng-include="'views/search.html'"/></header>
+            <section class="container" ng-view></section>
+        </section>
 
         <script src="scripts/vendor/jquery/jquery.js"></script>
         <script src="scripts/vendor/bootstrap-js/bootstrap.js"></script>
@@ -38,7 +38,7 @@
         <script src="scripts/kiriata.js"></script>
         <script src="scripts/services/localStorage.js"></script>
         <script src="scripts/controllers/search.js"></script>
-        <script src="scripts/controllers/movieList.js"></script>
+        <script src="scripts/controllers/searchResults.js"></script>
         <script src="scripts/controllers/movieDetail.js"></script>
         <script src="scripts/controllers/library.js"></script>
 

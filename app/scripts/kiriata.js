@@ -8,11 +8,11 @@ kiriataApp.config(['$routeProvider', function($routeProvider) {
         templateUrl: 'views/library.html',
         controller: 'LibraryCtrl'
       })
-      .when('/movieList', {
-        templateUrl: 'views/movieList.html',
+      .when('/search/:word', {
+        templateUrl: 'views/searchResult.html',
         controller: 'MovieListCtrl'
       })
-      .when('/movieDetail/:code', {
+      .when('/movie/:code', {
         templateUrl: 'views/movieDetail.html',
         controller: 'MovieDetailCtrl'
       })

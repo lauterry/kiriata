@@ -9,12 +9,12 @@ kiriataApp.factory('allocineService', ['$resource', function ($resource) {
         {partner:partner, callback:'JSON_CALLBACK', format:'json'},
         {get:{method:'JSONP'}});
 
-    var searchWithAllocine = function (keywork) {
-        return allocine.get({action:'search', q:keywork});
+    var searchWithAllocine = function (word, options) {
+        return allocine.get({action:'search', q:word}, options.success, options.error);
     };
 
-    var fetchMovieDetail = function(code){
-        return allocine.get({action:'movie', code:code, profile:'small'});
+    var fetchMovieDetail = function(code, options){
+        return allocine.get({action:'movie', code:code, profile:'small'}, options.success, options.error);
     };
 
     return {
