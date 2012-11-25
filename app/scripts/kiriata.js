@@ -72,8 +72,9 @@ mockedKiriataApp.run(function($httpBackend, localStorageService) {
                         "lastWatched": "2011-04-20"
                     }];
 
-
-    localStorageService.add('movies', angular.toJson(ownedMovies));
+    if(localStorage.length === 0){
+        localStorageService.add('movies', angular.toJson(ownedMovies));
+    }
 
     // calls to return templates are not mocked
     $httpBackend.whenGET(/^views/).passThrough();
@@ -82,7 +83,7 @@ mockedKiriataApp.run(function($httpBackend, localStorageService) {
     $httpBackend.whenJSONP(/^http:\/\/api.allocine.fr/).passThrough();
 
     // returns the current list of owned movies
-    $httpBackend.whenGET(/^http:\/\/localhost:8000\/kiriata\/movies/).respond(localStorageService.get('movies'));
+    $httpBackend.whenGET(/^http:\/\/localhost:8000\/kiriata\/movies/).respond(angular.fromJson(localStorageService.get('movies')));
 
     // adds a new movie to the ownedMovies array
     $httpBackend.whenPOST(/^http:\/\/localhost:8000\/kiriata\/movies/).respond(function(method, url, data) {
@@ -92,6 +93,21 @@ mockedKiriataApp.run(function($httpBackend, localStorageService) {
 
         localStorageService.add('movies', angular.toJson(movies));
        return 200;
+    });
+
+    // adds a new movie to the ownedMovies array
+    $httpBackend.whenDELETE(/^http:\/\/localhost:8000\/kiriata\/movies/).respond(function(method, url, data) {
+
+        var movies = angular.fromJson(localStorageService.get('movies'));
+        for (var i = 0 ; i < movies.length ; i++){
+            var movie = movies[i];
+            if(movie.code === data){
+                movies.splice(i,1);
+            }
+        }
+
+        localStorageService.add('movies', angular.toJson(movies));
+        return 200;
     });
 
 });

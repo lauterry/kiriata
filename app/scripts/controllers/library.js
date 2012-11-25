@@ -1,14 +1,15 @@
 'use strict';
 
-kiriataApp.controller('LibraryCtrl', ['$scope', '$resource', function($scope, $resource) {
+kiriataApp.controller('LibraryCtrl', ['$scope', 'kiriataService', function($scope, kiriataService) {
 
-    $scope.allocine = $resource("http://localhost:port/kiriata/:action",
-        {action:'movies', q:'', 'port':':8000'}
-    );
+    console.log('LibraryCtrl');
 
-    var movies = $scope.allocine.query(function(){
-        $scope.movies = movies;
-    });
+    $scope.movies = kiriataService.fetch();
+
+    $scope.remove = function(code){
+        kiriataService.remove(code);
+        $scope.movies = kiriataService.fetch();
+    }
 
 }]);
 
