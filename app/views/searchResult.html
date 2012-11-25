@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="span12">
+        <ul class="thumbnails">
+            <li ng-repeat="movie in movies.feed.movie" class="span12">
+                <div id="movieResult">
+
+                    <div ng-switch on="movie.poster.href" >
+                        <span ng-switch-when=undefined><img ng-src="img/no-photo.jpg" class="span2 img-rounded"></span>
+                        <span ng-switch-default><img ng-src="{{movie.poster.href}}" class="span2 img-rounded"></span>
+                    </div>
+
+                    <div class="caption">
+                        <h3>{{movie.originalTitle}}</h3>
+                        <p><b>Released year : </b>{{movie.release.releaseDate}}</p>
+                        <p><b>Production year : </b>{{movie.productionYear}}</p>
+                        <p><b>Directors : </b>{{movie.castingShort.directors}}</p>
+                        <p><b>Actors : </b>{{movie.castingShort.actors}}</p>
+                        <p>
+                            <a ng-href="#/movie/{{movie.code}}" class="btn btn-info">Plus de détails</a>
+                            <span ng-switch on="movie.owned">
+                                <button ng-switch-when="y" class="btn btn-success">Possédé</button>
+                                <button ng-switch-default ng-click="addMovie(movie)" class="btn btn-inverse">Ajouter</button>
+                                <!--<button ng-switch-default class="btn btn-warning">Je ne sais pas si tu l'as</button>-->
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

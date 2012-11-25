@@ -1,5 +1,5 @@
 body {
-  padding-top: 60px;
+  padding-top: 40px;
   @media (max-width: 979px){
     padding-top: 0px;
   }
@@ -11,14 +11,20 @@ body {
   }
 
   &.hero-unit{
-    padding: 40px 60px;
+    padding: 20px 60px;
   }
 
   p {
     font-size: 14px;
+    margin-left: 15px
   }
 }
 
 #movieResult .caption {
   margin-left : 220px;
+}
+
+
+.controls label {
+  padding-top:5px;
 }

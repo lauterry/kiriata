@@ -1,39 +1,8 @@
-<div class="row">
-    <div class="span12">
-        <div id="searchPanel" class="hero-unit">
-            <form class="form-search" ng-submit="search()">
-                <div class="input-append">
-                    <input type="text" class="input-xxlarge search-query" ng-model="searchInput">
-                    <input type="button" class="btn btn-primary" value="Chercher"/>
-                    <p>Ex : Avatar, films d'horreur, Peter Jackson ...</p>
-                </div>
-            </form>
-        </div>
+<form class="form-search" ng-submit="search(searchInput)">
+    <div class="input-append">
+        <input type="text" class="input-xxlarge search-query" ng-model="searchInput">
+        <input type="submit" class="btn btn-primary" value="Chercher"/>
+
     </div>
-
-    <div class="span12">
-        <ul class="thumbnails">
-            <li ng-repeat="movie in movies.feed.movie" class="span12">
-                <div id="movieResult">
-
-                    <div ng-switch on="movie.poster.href" >
-                        <span ng-switch-when=undefined><img ng-src="img/no-photo.jpg" class="span2 img-rounded"></span>
-                        <span ng-switch-default><img ng-src="{{movie.poster.href}}" class="span2 img-rounded"></span>
-                    </div>
-
-                    <div class="caption">
-                        <h3>{{movie.originalTitle}}</h3>
-                        <p><b>Released year : </b>{{movie.release.releaseDate}}</p>
-                        <p><b>Production year : </b>{{movie.productionYear}}</p>
-                        <p><b>Directors : </b>{{movie.castingShort.directors}}</p>
-                        <p><b>Actors : </b>{{movie.castingShort.actors}}</p>
-                        <p>
-                            <a ng-href="#/movies/{{movie.code}}" class="btn btn-info">More details</a>
-                            <a id="addButton" ng-href="#/movies/{{search_query}}/add/{{movie.code}}" class="btn btn-success">Ajouter</a>
-                        </p>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-</div>
+    <p>Ex : Avatar, films d'horreur, Peter Jackson ...</p>
+</form>
